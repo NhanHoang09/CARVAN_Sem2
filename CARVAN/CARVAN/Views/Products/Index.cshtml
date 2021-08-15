@@ -1,0 +1,72 @@
+﻿@model IEnumerable<CARVAN.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<div class="row" id="search" style="padding-top: 52px;">
+    <form id="search-form" action="" method="POST" enctype="multipart/form-car">
+        <div class="form-group col-xs-9">
+            <input id="form-control" class="form-control" type="text" placeholder="Search car..." />
+        </div>
+        <div class="form-group col-xs-3">
+            <button type="submit" class="btn btn-block btn-primary">Search</button>
+        </div>
+    </form>
+</div>
+<div class="row" id="filter">
+    <form>
+        <div class="form-group col-sm-3 col-xs-6">
+            <select data-filter="brand" class="filter-brand filter form-control">
+                <option value="">Select Brand</option>
+                <option value="">Show All</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-3 col-xs-6">
+            <select data-filter="model" class="filter-model filter form-control">
+                <option value="">Select Model</option>
+                <option value="">Show All</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-3 col-xs-6">
+            <select data-filter="rangeofcar" class="filter-rangeofcar filter form-control">
+                <option value="">Select range-of-cars</option>
+                <option value="">Show All</option>
+            </select>
+        </div>
+    </form>
+</div>
+@foreach (var product in Model)
+{
+        <div class="col-md-4 col-sm-6 store-product product" data-brand="@product.Brand_Car" data-model="@product.Name_Car" data-rangeofcar="@product.Range_Of_Car" data-price="@product.Pricing">
+            <div class="product-grid4" style="width: 100%; height: 380px">
+                <div class="product-image4">
+                    <a href="#">
+                        <img class="pic-1" src="@product.Image_1" style="height: 210px">
+                        <img class="pic-2" src="@product.Image_2" style="height: 210px">
+                    </a>
+                    <ul class="social">
+                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                        <li><a href="#" data-tip="Search"><i class="fa fa-search"></i></a></li>
+                        <li><a href="#" data-tip="Contact"><i class="fa fa-phone"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">@product.Status</span>
+                    <span class="product-discount-label">HOT</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">@product.Name_Car</a></h3>
+                    <div class="price">
+                        @product.Pricing
+                    </div>
+                    <a class="add-to-cart" href="#">SEE MORE</a>
+                </div>
+            </div>
+        </div>
+ 
+
+
+}
+
