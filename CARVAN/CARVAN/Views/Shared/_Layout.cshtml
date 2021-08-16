@@ -30,9 +30,9 @@
                         <input type="checkbox" id="range-of-car">
                         <label for="range-of-car">Range of Car</label>
                         <ul>
-                            @foreach (var cat in ViewBag.Range_Of_Car)
+                            @foreach (var cat in Model)
                             {
-                                <li><a class="dropdown-item" href="@Url.Action("Index", new { controller = "Products"})?category=@cat.Range_Of_Car">@cat.Name_Car</a></li>
+                                <li><a href="@Url.Action("Index", new { controller = "Products"})?rangeofcars=@cat.Range_Of_Car">@cat.Range_Of_Cars</a></li>
                             }
                         </ul>
                     </li>

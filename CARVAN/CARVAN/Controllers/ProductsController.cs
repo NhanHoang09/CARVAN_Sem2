@@ -17,7 +17,7 @@ namespace CARVAN.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            string categoryId = Request.Params.Get("Range_Of_Car");
+            string categoryId = Request.Params.Get("Products");
             IEnumerable<Product> products;
             if (!string.IsNullOrWhiteSpace(categoryId))
             {
