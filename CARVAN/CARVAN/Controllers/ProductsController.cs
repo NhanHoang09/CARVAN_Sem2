@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CARVAN.Models;
 
+
 namespace CARVAN.Controllers
 {
     public class ProductsController : Controller
@@ -28,7 +29,7 @@ namespace CARVAN.Controllers
             {
                 products = db.Products;
             }
-            ViewBag.RangeOfCars = products.Select(p => p.Range_Of_Car).Distinct();
+            ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
             return View(db.Products.ToList());
         }
 
@@ -44,7 +45,10 @@ namespace CARVAN.Controllers
             {
                 return HttpNotFound();
             }
+          
+            ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
             return View(product);
+            
         }
 
         // GET: Products/Create

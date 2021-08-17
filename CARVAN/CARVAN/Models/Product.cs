@@ -6,6 +6,8 @@ namespace CARVAN.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using System.Web.Mvc;
+    using System.Linq;
+
 
     public partial class Product
     {
@@ -57,6 +59,12 @@ namespace CARVAN.Models
 
         [StringLength(20)]
         public string Image_6 { get; set; }
+
+        [NotMapped]
+        public Feature DefaultFeature
+        {
+            get { return Features.First(); }
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feature> Features { get; set; }

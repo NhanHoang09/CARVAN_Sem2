@@ -1,122 +1,121 @@
-﻿@model CARVAN.Models.Product
+﻿
+@model CARVAN.Models.Product
 
 @{
     ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
+<main>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name_Car)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name_Car)
-        </dd>
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-xl-7">
+                <div class="watch-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-2 watch-model">
+                            <p><img src="../image/imgonline-com-ua-Resize-ognpJGvwZk2o0rf.jpg" width="50" id="img1" alt=""></p>
+                            <p><img src="../image/imgonline-com-ua-Resize-6z16rg2BJ9wr.jpg" width="50" id="img2" alt=""></p>
+                            <p><img src="../image/imgonline-com-ua-Resize-ognpJGvwZk2o0rf.jpg" width="50" id="img3" alt=""></p>
+                            <p><img src="../image/imgonline-com-ua-Resize-6z16rg2BJ9wr.jpg" width="50" id="img4" alt=""></p>
+                            <p><img src="../image/imgonline-com-ua-Resize-ognpJGvwZk2o0rf.jpg" width="50" id="img5" alt=""></p>
+                        </div>
+                        <div class="col-xl-10 preview">
+                            <img id="image" src="../image/imgonline-com-ua-Resize-6z16rg2BJ9wr.jpg" alt="img" width="100%" class="img-fluid">
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Range_Of_Car)
-        </dt>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="card-body-des des">
+                        <h5 class="card-title">Description</h5>
+                        <p id="description" class="card-text">@Model.Description</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5">
+                <div class="parameter">
+                    <h2 id="name" class="display-2">@Model.Name_Car</h2>
+                    <p>Model: <span id="brand">@Model.Brand_Car</span></p>
+                    <hr>
+                    <h6>COLOR</h6>
+                    <div class="row no-gutters mt-4">
+                        <i class="fa fa-circle text-light"></i>
+                        <i class="fa fa-circle text-warning ml-3"></i>
+                        <i class="fa fa-circle text-dark ml-3"></i>
+                    </div>
+                    <hr>
+                    <table id="details" class="content-table">
+                        <tbody>
+                            <tr>
+                                <td>Condition:</td>
+                                <td>@Model.DefaultFeature.Condition</td>
+                                <td>Model:</td>
+                                <td>@Model.DefaultFeature.Model</td>
+                            </tr>
+                            <tr>
+                                <td>Price:</td>
+                                <td>@Model.DefaultFeature.Price</td>
+                                <td>Fuel:</td>
+                                <td>@Model.DefaultFeature.Fuel</td>
+                            </tr>
+                            <tr>
+                                <td>Body Style:</td>
+                                <td>@Model.DefaultFeature.Body_Style</td>
+                                <td>Doors:</td>
+                                <td>@Model.DefaultFeature.Doors</td>
+                            </tr>
+                            <tr>
+                                <td>Power:</td>
+                                <td>@Model.DefaultFeature.Power_Car</td>
+                                <td>Make:</td>
+                                <td>@Model.DefaultFeature.Make</td>
+                            </tr>
+                            <tr>
+                                <td>Year:</td>
+                                <td>@Model.DefaultFeature.Year_Car</td>
+                                <td>Mileage:</td>
+                                <td>@Model.DefaultFeature.Mileage</td>
+                            </tr>
+                            <tr>
+                                <td>Color:</td>
+                                <td>@Model.DefaultFeature.Color</td>
+                                <td>Transmission:</td>
+                                <td>@Model.DefaultFeature.Transmission</td>
+                            </tr>
+                            <tr>
+                                <td>Battery:</td>
+                                <td>@Model.DefaultFeature.Battery</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <div class="price">
+                        <h2>$<span id="price">@Model.Pricing</span></h2>
+                    </div>
+                    <div class="cart">
+                        <div class="row no-gutters contacts">
+                            <button class="btn add-to-cart"><i class="fas fa-phone"></i><a href="tel:0123456789">CALL US</a></button>
+                            <button class="btn add-to-cart"><i class="fas fa-envelope"></i><a href="mailto:test@gmail.com">EMAIL US</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Range_Of_Car)
-        </dd>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Brand_Car)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Brand_Car)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Pricing)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pricing)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Seller)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Seller)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image_3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image_3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image_4)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image_4)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image_5)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image_5)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image_6)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image_6)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Car }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <hr>
+    <h3 class="title">Similar Product</h3>
+    <div class="slide-container">
+        <img id="slide-left" class="arrow" src="../image/arrow-left.png">
+        <section class="container-fluid" id="slider">
+            <div id="products">
+            </div>
+        </section>
+        <img id="slide-right" class="arrow" src="../image/arrow-right.png">
+    </div>
+</main>
