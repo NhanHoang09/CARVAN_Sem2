@@ -7,7 +7,7 @@ namespace CARVAN.Models
     using System.Data.Entity.Spatial;
     using System.Web.Mvc;
     using System.Linq;
-
+    using System.Web;
 
     public partial class Product
     {
@@ -68,5 +68,9 @@ namespace CARVAN.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feature> Features { get; set; }
+
+
+        [NotMapped]
+        public HttpPostedFileBase UpLoadFile { get; set; }
     }
 }

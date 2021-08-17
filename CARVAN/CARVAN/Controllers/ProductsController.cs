@@ -94,17 +94,42 @@ namespace CARVAN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_Car,Name_Car,Range_Of_Car,Brand_Car,Pricing,Seller,Status,Description,Image_1,Image_2,Image_3,Image_4,Image_5,Image_6")] Product product)
+        public ActionResult Edit(Product product)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(product).State = EntityState.Modified;
+                SaveUploadedImage(product); // TODO: upload image, cần accept field ở phần Bind
+              
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(product);
         }
 
+        private void SaveUploadedImage(Product product)
+        {
+            // Bỏ qua xử lí nếu không có file được upload
+            if (product.UpLoadFile == null) { return; }
+
+            // Lấy đường dẫn để lưu
+            string uploadDir = "/Uploads";
+            string relativePath = Common.Utils.PrependUniqueString(product.UpLoadFile.FileName);
+            string absolutePath = Server.MapPath(uploadDir + "/" + relativePath);
+
+            //var featuredImage = new ProductImage
+            //{
+            //    ImageUrl = relativePath,
+            //    IsFeatured = true
+            //};
+
+            // Cơ bản để lưu file về
+            product.UpLoadFile.SaveAs(absolutePath);
+
+            // Gắn thông tin imgage vào sản phẩm (lưu dữ liệu vào bảng ProductImage)
+            //product.Product.Add(Image_2);
+            product.Image_1 = relativePath;
+        }
         // GET: Products/Delete/5
         public ActionResult Delete(string id)
         {
