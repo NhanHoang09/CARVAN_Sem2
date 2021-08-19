@@ -4,25 +4,26 @@
 @{
     ViewBag.Title = "Details";
 }
-Comm
+
+<link rel="stylesheet" href="~/Content/css/detail.css">
+
+
 <h2>Details</h2>
 <main>
-
-
     <div class="container-fluid">
         <div class="row no-gutters">
             <div class="col-xl-7">
                 <div class="watch-content">
                     <div class="row no-gutters">
                         <div class="col-xl-2 watch-model">
-                            <p><img src="../image/imgonline-com-ua-Resize-ognpJGvwZk2o0rf.jpg" width="50" id="img1" alt=""></p>
-                            <p><img src="../image/imgonline-com-ua-Resize-6z16rg2BJ9wr.jpg" width="50" id="img2" alt=""></p>
-                            <p><img src="../image/imgonline-com-ua-Resize-ognpJGvwZk2o0rf.jpg" width="50" id="img3" alt=""></p>
-                            <p><img src="../image/imgonline-com-ua-Resize-6z16rg2BJ9wr.jpg" width="50" id="img4" alt=""></p>
-                            <p><img src="../image/imgonline-com-ua-Resize-ognpJGvwZk2o0rf.jpg" width="50" id="img5" alt=""></p>
+                            <p><img src="~/Content/image/product/@Model.Id_Car/@Model.Image_1" width="50" id="img1" alt=""></p>
+                            <p><img src="~/Content/image/product/@Model.Id_Car/@Model.Image_2" width="50" id="img2" alt=""></p>
+                            <p><img src="~/Content/image/product/@Model.Id_Car/@Model.Image_3" width="50" id="img3" alt=""></p>
+                            <p><img src="~/Content/image/product/@Model.Id_Car/@Model.Image_4" width="50" id="img4" alt=""></p>
+                            <p><img src="~/Content/image/product/@Model.Id_Car/@Model.Image_5" width="50" id="img5" alt=""></p>
                         </div>
                         <div class="col-xl-10 preview">
-                            <img id="image" src="../image/imgonline-com-ua-Resize-6z16rg2BJ9wr.jpg" alt="img" width="100%" class="img-fluid">
+                            <img id="image" src="~/Content/image/product/@Model.Id_Car/@Model.Image_1" alt="img" width="100%" class="img-fluid">
                         </div>
 
                     </div>
@@ -30,7 +31,7 @@ Comm
                 <div class="row no-gutters">
                     <div class="card-body-des des">
                         <h5 class="card-title">Description</h5>
-                        <p id="description" class="card-text">@Model.Description</p>
+                        <p id="description" class="card-text">@Html.Raw(Model.Description)</p>
                     </div>
                 </div>
             </div>
@@ -105,17 +106,26 @@ Comm
         </div>
 
     </div>
-
-
-
     <hr>
     <h3 class="title">Similar Product</h3>
     <div class="slide-container">
-        <img id="slide-left" class="arrow" src="../image/arrow-left.png">
+        <img id="slide-left" class="arrow" src="~/Content/image/arrow-left.png">
         <section class="container-fluid" id="slider">
             <div id="products">
+                <div class="thumbnail">
+                    
+                    <img src="~/Content/image/product/@Model.Id_Car/@Model.Image_1" alt="">
+                    <div class="product-details">
+                        
+                         <h2>@Model.Name_Car</h2>
+                        <p>@Model.Pricing</p>
+                        <a href="detail.html?id=' + i + '">SEE MORE</a>
+                        
+                    </div>
+                    
+                </div>
             </div>
         </section>
-        <img id="slide-right" class="arrow" src="../image/arrow-right.png">
+        <img id="slide-right" class="arrow" src="~/Content/image/arrow-right.png">
     </div>
 </main>

@@ -1,31 +1,164 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<CARVAN.Models.Product>
+@{
+    ViewBag.Title = "CARVAN";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<link rel="stylesheet" href="~/Content/css/style.css">
+<link href="~/Content/Scripts/library/1.3.0/css/line-awesome.min.css" rel="stylesheet" />
+<link rel="icon" href="~/Content/image/CARVAN.png" type="image/gif" sizes="50x50">
+
+
+
+<div class="container-fluid" style="padding-left: 0; padding-right: 0;">
+    <div class="logo-img">
+    </div>
+    <div class="container title-content">
+        <h2>CARVAN</h2>
+        <h3>Conquer every journey</h3>
+        <p>
+            Reliable choice for you.
+        </p>
+        <button><a href="#">SEE MORE</a></button>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+<!-- ----product introduction---- -->
+<div class="container-fluid ">
+    <div class="main-home">
+        <div class="home">
+            <h4 class="home__title">New Car for this mounth</h4>
+
+            <div class="home__img">
+                <img src="~/Content/image/2car2.png" alt="Anh">
+            </div>
+
+            <div class="home__information">
+                <h2 class="home__subtitle">TOYOTA<br>CAMRY LE HYBRID</h2>
+                <p class="home__description">Hybrid Performance Camry Hybrid delivers impressive <br> performance with an available sport-tuned suspension<br> and added hybrid efficiency.</p>
+            </div>
+
+            <div class="box">
+                <div class="box__medium box--dark">
+                    <i class="las la-tachometer-alt icon-box"></i>
+                    <h3 class="box__medium-title d-inline">3.7</h3>
+                    <span class="box__medium-description d-block">Sec.</span>
+                    <span class="box__medium-detail">0-100 km/h</span>
+                </div>
+
+                <div>
+                    <div class="box__small box--dark">
+                        <i class="lab la-superpowers icon-box icon-box--small"></i>
+                        <h3 class="box__small-title d-inline">325</h3>
+                        <span class="box__small-description d-block">km/h</span>
+                        <span class="box__small-detail">Top Speed</span>
+                    </div>
+                    <div class="box__small box--dark">
+                        <i class="fas fa-car icon-box icon-box--small"></i>
+                        <h3 class="box__small-title d-inline">8.000</h3>
+                        <span class="box__small-description d-block">r.p.m</span>
+                        <span class="box__small-detail">Power</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+</div>
+
+<!-- ---------------------------------- -->
+<section class="container article">
+    <h2 class="text-center">HOT Products</h2><br>
+    <div class="row" id="hot-products">
+
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</section>
+<!--end Of New Product-->
+<div class="title-box">
+    <h1>Our Team</h1>
+</div>
+<div class="team-container">
+    <div class="team-profiles">
+        <div class="team-profile">
+            <img src="~/Content/image/team/team1.jpg" class="team-profile-img">
+            <h3 class="team-user-name">William</h3>
+            <h5>CEO</h5>
+
+
+        </div>
+        <div class="team-profile">
+            <img src="~/Content/image/team/team2.jpg" class="team-profile-img">
+            <h3 class="team-user-name">Camila</h3>
+            <h5>Founder</h5>
+
+        </div>
+        <div class="team-profile">
+            <img src="~/Content/image/team/team3.jpg" class="team-profile-img">
+
+            <h3 class="team-user-name">Isabella</h3>
+            <h5>Co-founder</h5>
+
+
+        </div>
     </div>
 </div>
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 user">
+                <h1><span class="counter">20,000</span></h1>
+                <h3>HAPPY CLIENTS</h3>
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="col-md-4 city">
+                <h1><span class="counter ">100</span></h1>
+                <h3>OFFICE IN CITIES</h3>
+                <i class="fas fa-city"></i>
+            </div>
+            <div class="col-md-4 new-car">
+                <h1><span class="counter ">8,000</span></h1>
+                <h3>New Car</h3>
+                <i class="fas fa-car"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Of Services-->
+<section class="article">
+    <div class="container py-5">
+        <h1 class="text-center">Best Seller</h1><br>
+        <div class="row">
+            <div class="col-lg-4 wow bounceIn" data-wow-delay="0.3s">
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row" id="products">
+    </div>
+    <div class="container">
+        <h2 class="text-center font-weight-bold">Our Partners</h2>
+        <section class="customer-logos slider">
+            <div class="slide"><img src="~/Content/image/logo-audi.png" alt="logo"></div>
+            <div class="slide"><img src="~/Content/image/logo-kia.jpg" alt="logo"></div>
+            <div class="slide"><img src="~/Content/image/logo-toyota.jpg" alt="logo"></div>
+            <div class="slide"><img src="~/Content/image/hyundai-logo.jpg" alt="logo"></div>
+            <div class="slide"><img src="~/Content/image/jeep-logo.jpg" alt="logo"></div>
+            <div class="slide"><img src="~/Content/image/logo-audi.png" alt="logo"></div>
+            <div class="slide"><img src="~/Content/image/logo-kia.jpg" alt="logo"></div>
+            <div class="slide"><img src="~/Content/image/logo-toyota.jpg" alt="logo"></div>
+        </section>
+    </div>
+    <a href="#" class="to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</div>
+
+
+
+
+
+
+
+
