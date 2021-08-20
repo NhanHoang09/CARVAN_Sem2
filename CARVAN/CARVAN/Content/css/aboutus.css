@@ -8,7 +8,7 @@ body{
     background-color: #f1f1f1;
 }
 .about{
-    background: url(../image/2car2.png) no-repeat left;
+    background: url(~/Content/image/2car2.png) no-repeat left;
     background-size: 55%;
     background-color: #fdfdfd;
     overflow: hidden;

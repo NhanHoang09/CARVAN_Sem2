@@ -22,12 +22,20 @@ namespace CARVAN.Controllers
 
         public ActionResult About()
         {
-  
+            IEnumerable<Product> products;
+            products = db.Products;
+
+            ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
+
             return View();
         }
 
         public ActionResult Contact()
         {
+            IEnumerable<Product> products;
+            products = db.Products;
+
+            ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
 
             return View();
         }

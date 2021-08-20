@@ -4,9 +4,9 @@
     ViewBag.Title = "Index";
 }
 
+<link rel="stylesheet" href="~/Content/css/range-of-cars.css">
 
 <div class="container">
-    <div class="row" id="products" style="margin-top: -12px">
         <div class="row" id="search" style="padding-top: 52px;">
             <form id="search-form" action="" method="POST">
                 <div class="form-group col-xs-9">
@@ -39,32 +39,33 @@
                 </div>
             </form>
         </div>
-        @foreach (var product in Model)
-        {
-            <div class="col-md-4 col-sm-6 store-product product" data-brand="@product.Brand_Car" data-model="@product.Name_Car" data-rangeofcar="@product.Range_Of_Car" data-price="@product.Pricing">
-                <div class="product-grid4" style="width: 100%; height: 380px">
-                    <div class="product-image4">
-                        <a href="#">
-                            <img class="pic-1" src="~/Content/image/product/@product.Id_Car/@product.Image_1" style="height: 210px">
-                            <img class="pic-2" src="~/Content/image/product/@product.Id_Car/@product.Image_1" style="height: 210px">
-                        </a>
-                        <ul class="social">
-                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="#" data-tip="Search"><i class="fa fa-search"></i></a></li>
-                            <li><a href="#" data-tip="Contact"><i class="fa fa-phone"></i></a></li>
-                        </ul>
-                        <span class="product-new-label">@product.Status</span>
-                        <span class="product-discount-label">HOT</span>
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">@product.Name_Car</a></h3>
-                        <div class="price">
-                            @product.Pricing
+        <div class="row" id="products">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4 col-sm-6 store-product product" data-brand="@product.Brand_Car" data-model="@product.Name_Car" data-rangeofcar="@product.Range_Of_Car" data-price="@product.Pricing">
+                    <div class="product-grid4" style="width: 100%; height: 380px">
+                        <div class="product-image4">
+                            <a href="#">
+                                <img class="pic-1" src="~/Content/image/product/@product.Id_Car/@product.Image_1" style="height: 210px">
+                                <img class="pic-2" src="~/Content/image/product/@product.Id_Car/@product.Image_1" style="height: 210px">
+                            </a>
+                            <ul class="social">
+                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                <li><a href="#" data-tip="Search"><i class="fa fa-search"></i></a></li>
+                                <li><a href="#" data-tip="Contact"><i class="fa fa-phone"></i></a></li>
+                            </ul>
+                            <span class="product-new-label">@product.Status</span>
+                            <span class="product-discount-label">HOT</span>
                         </div>
-                        <a class="add-to-cart" href="@Url.Action("Details", new { controller = "Products"})\@product.Id_Car">SEE MORE</a>
+                        <div class="product-content">
+                            <h3 class="title"><a href="#">@product.Name_Car</a></h3>
+                            <div class="price">
+                                @product.Pricing
+                            </div>
+                            <a class="add-to-cart" href="@Url.Action("Details", new { controller = "Products"})\@product.Id_Car">SEE MORE</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
-    </div>
-</div>
+            }
+        </div>
+        </div>
