@@ -18,7 +18,7 @@ namespace CARVAN.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            string categoryId = Request.Params.Get("Range_Of_Cars");
+            string categoryId = Request.Params.Get("rangeofcars");
             IEnumerable<Product> products;
             if (!string.IsNullOrWhiteSpace(categoryId))
             {
@@ -30,7 +30,7 @@ namespace CARVAN.Controllers
                 products = db.Products;
             }
             ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
-            return View(db.Products.ToList());
+            return View(products);
         }
 
         // GET: Products/Details/5
@@ -47,6 +47,7 @@ namespace CARVAN.Controllers
             }
           
             ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
+            ViewBag.Similar = product;
             return View(product);
             
         }
