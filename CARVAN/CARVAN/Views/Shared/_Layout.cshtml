@@ -43,71 +43,85 @@
                             }
                         </ul>
                     </li>
-                    <li>
-                        <a href="#" class="desktop-link">Brands</a>
-                        <input type="checkbox" id="Brands">
-                        <label for="Brands">Brands</label>
-                        <ul>
-                            <li>
-                                <a href="#" class="desktop-link">AUDI</a>
-                                <input type="checkbox" id="Audi">
-                                <label for="Audi">Audi</label>
-                                <ul class="sub-menu">
-                                    <li><a href="./htmls/detail.html?id=0">e-tron-sportback</a></li>
-                                    <li><a href="./htmls/detail.html?id=1">A6</a></li>
-                                    <li><a href="./htmls/detail.html?id=2">S6</a></li>
-                                    <li><a href="./htmls/detail.html?id=3">Q3</a></li>
-                                </ul>
+                    @foreach (var bn in ViewBag.BranchNames)
+                    {
+                        <li>
+                            <a href="#" class="desktop-link">Brands</a>
+                            <input type="checkbox" id="Brands">
+                            <label for="Brands">@bn.Key</label>
+                            <ul>
+                                @foreach (var cn in bn.Value)
+                                {
+                                    <li><a href="./htmls/detail.html?id=1">@cn</a></li>
+                                }
+                            </ul>
                             </li>
-                            <li>
-                                <a href="#" class="desktop-link">KIA</a>
-                                <input type="checkbox" id="kia">
-                                <label for="kia">KIA</label>
-                                <ul>
-                                    <li>
-                                        <!-- <a href="./htmls/detail.html?id=8">Rio</a> -->
-                                        <a href="#" class="desktop-link">RIO</a>
-                                        <input type="checkbox" id="rio">
-                                        <label for="rio">RIO</label>
-                                        <ul>
-                                            <li><a href="">2017</a></li>
-                                            <li><a href="">2020</a></li>
-                                        </ul>
+                            }
+                        <li>
+                            <a href="#" class="desktop-link">Brands</a>
+                            <input type="checkbox" id="Brands">
+                            <label for="Brands">Brands</label>
+                            <ul>
+                                <li>
+                                    <a href="#" class="desktop-link">AUDI</a>
+                                    <input type="checkbox" id="Audi">
+                                    <label for="Audi">Audi</label>
+                                    <ul class="sub-menu">
+                                        <li><a href="./htmls/detail.html?id=0">e-tron-sportback</a></li>
+                                        <li><a href="./htmls/detail.html?id=1">A6</a></li>
+                                        <li><a href="./htmls/detail.html?id=2">S6</a></li>
+                                        <li><a href="./htmls/detail.html?id=3">Q3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="desktop-link">KIA</a>
+                                    <input type="checkbox" id="kia">
+                                    <label for="kia">KIA</label>
+                                    <ul>
+                                        <li>
+                                            <!-- <a href="./htmls/detail.html?id=8">Rio</a> -->
+                                            <a href="#" class="desktop-link">RIO</a>
+                                            <input type="checkbox" id="rio">
+                                            <label for="rio">RIO</label>
+                                            <ul>
+                                                <li><a href="">2017</a></li>
+                                                <li><a href="">2020</a></li>
+                                            </ul>
 
-                                    </li>
-                                    <li><a href="./htmls/detail.html?id=9">K5</a></li>
-                                    <li><a href="./htmls/detail.html?id=10">Sorento Hybrid</a></li>
-                                    <li><a href="./htmls/detail.html?id=11">Telluride</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="desktop-link">TOYOTA</a>
-                                <input type="checkbox" id="Toyota">
-                                <label for="Toyota">Toyota</label>
-                                <ul>
-                                    <li><a href="./htmls/detail.html?id=4">Camry LE hybrid</a></li>
-                                    <li><a href="./htmls/detail.html?id=5">COROLLA</a></li>
-                                    <li><a href="./htmls/detail.html?id=6">C-HR</a></li>
-                                    <li><a href="./htmls/detail.html?id=7">VENZA</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#" class="desktop-link">HYUNDAI</a>
-                                <input type="checkbox" id="hyundai">
-                                <label for="hyundai">Hyundai</label>
-                                <ul>
-                                    <li><a href="./htmls/detail.html?id=12">IONIQ Hybrid</a></li>
-                                    <li><a href="./htmls/detail.html?id=13">VELOSTER</a></li>
-                                    <li><a href="./htmls/detail.html?id=14">VELOSTER N</a></li>
-                                    <li><a href="./htmls/detail.html?id=15">VENUE</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                                        </li>
+                                        <li><a href="./htmls/detail.html?id=9">K5</a></li>
+                                        <li><a href="./htmls/detail.html?id=10">Sorento Hybrid</a></li>
+                                        <li><a href="./htmls/detail.html?id=11">Telluride</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="desktop-link">TOYOTA</a>
+                                    <input type="checkbox" id="Toyota">
+                                    <label for="Toyota">Toyota</label>
+                                    <ul>
+                                        <li><a href="./htmls/detail.html?id=4">Camry LE hybrid</a></li>
+                                        <li><a href="./htmls/detail.html?id=5">COROLLA</a></li>
+                                        <li><a href="./htmls/detail.html?id=6">C-HR</a></li>
+                                        <li><a href="./htmls/detail.html?id=7">VENZA</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="desktop-link">HYUNDAI</a>
+                                    <input type="checkbox" id="hyundai">
+                                    <label for="hyundai">Hyundai</label>
+                                    <ul>
+                                        <li><a href="./htmls/detail.html?id=12">IONIQ Hybrid</a></li>
+                                        <li><a href="./htmls/detail.html?id=13">VELOSTER</a></li>
+                                        <li><a href="./htmls/detail.html?id=14">VELOSTER N</a></li>
+                                        <li><a href="./htmls/detail.html?id=15">VENUE</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
 
-                    <li><a href="./htmls/PreOwned-car.html">PreOwned Car</a></li>
-                    <li><a href="./htmls/contactsus.html">Contact</a></li>
-                </ul>
+                        <li><a href="./htmls/PreOwned-car.html">PreOwned Car</a></li>
+                        <li><a href="./htmls/contactsus.html">Contact</a></li>
+                    </ul>
             </div>
             <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
             <form action="#" class="search-box">

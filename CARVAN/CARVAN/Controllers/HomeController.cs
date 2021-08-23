@@ -17,7 +17,7 @@ namespace CARVAN.Controllers
             products = db.Products;
         
         ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
-            return View();
+            return View(products);
         }
 
         public ActionResult About()

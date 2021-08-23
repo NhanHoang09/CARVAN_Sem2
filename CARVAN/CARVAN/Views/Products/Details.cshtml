@@ -112,22 +112,20 @@
         <img id="slide-left" class="arrow" src="~/Content/image/arrow-left.png">
         <section class="container-fluid" id="slider">
             <div id="products">
-                @foreach(var product in ViewBag.Similar)
-            {
                 <div class="thumbnail">
                     
-                    <img src="~/Content/image/product/@product/@product.Image_1" alt="">
+                    <img src="~/Content/image/product" alt="">
                     <div class="product-details">
                         
-                         <h2>@product.Name_Car</h2>
-                        <p>@product.Pricing</p>
+                        <h2>Name</h2>
+                        <p>Price</p>
                         <a href="detail.html?id=' + i + '">SEE MORE</a>
                         
                     </div>
                     
                 </div>
 
-            }
+        
             </div>
         </section>
         <img id="slide-right" class="arrow" src="~/Content/image/arrow-right.png">
