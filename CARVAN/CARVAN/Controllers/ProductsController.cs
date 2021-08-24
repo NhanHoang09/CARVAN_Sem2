@@ -29,8 +29,8 @@ namespace CARVAN.Controllers
             {
                 products = db.Products;
             }
-            ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
-            ViewBag.BranchNames = GetBranchNames();
+            //ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
+            //ViewBag.BranchNames = GetBranchNames();
 
 
             return View(products);
@@ -49,31 +49,31 @@ namespace CARVAN.Controllers
                 return HttpNotFound();
             }
         
-            ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
-            ViewBag.BranchNames = GetBranchNames();
+            //ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
+            //ViewBag.BranchNames = GetBranchNames();
             ViewBag.products = db.Products;
             return View(product);
             
         }
 
-        private Dictionary<string, List<string>> GetBranchNames()
-        {
-           var names = db.Products.Select(p => new {BranchCar = p.Brand_Car, NameCar = p.Name_Car});
-            Dictionary<string, List<string>> dicNames = new Dictionary<string, List<string>>();
-            foreach(var n in names)
-            {
-                if (dicNames.ContainsKey(n.BranchCar))
-                {
-                    dicNames[n.BranchCar].Add(n.NameCar);
-                }
-                else
-                {
-                    dicNames[n.BranchCar] = new List<string> { n.NameCar};
-                }
-            }
-            return dicNames;
+        //private Dictionary<string, List<string>> GetBranchNames()
+        //{
+        //   var names = db.Products.Select(p => new {BranchCar = p.Brand_Car, NameCar = p.Name_Car});
+        //    Dictionary<string, List<string>> dicNames = new Dictionary<string, List<string>>();
+        //    foreach(var n in names)
+        //    {
+        //        if (dicNames.ContainsKey(n.BranchCar))
+        //        {
+        //            dicNames[n.BranchCar].Add(n.NameCar);
+        //        }
+        //        else
+        //        {
+        //            dicNames[n.BranchCar] = new List<string> { n.NameCar};
+        //        }
+        //    }
+        //    return dicNames;
 
-        }
+        //}
 
         // GET: Products/Create
         public ActionResult Create()

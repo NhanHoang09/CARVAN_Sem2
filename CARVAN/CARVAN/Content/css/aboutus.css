@@ -7,13 +7,12 @@ body{
     min-height: 100vh;
     background-color: #f1f1f1;
 }
-.about{
+.about-container {
     background: url(~/Content/image/2car2.png) no-repeat left;
-    background-size: 55%;
+    footer_width about col-md-4 background-size: 55%;
     background-color: #fdfdfd;
     overflow: hidden;
     padding: 100px 0;
-
 }
 .inner-section{
     width: 55%;

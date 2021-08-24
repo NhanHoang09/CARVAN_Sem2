@@ -1,0 +1,43 @@
+﻿
+
+<ul class="links">
+    <li><a href="@Url.Action("About", new { controller = "Home" })">About</a></li>
+    <li>
+        <a href="" class="desktop-link">Range of Car</a>
+        <input type="checkbox" id="range-of-car">
+        <label for="range-of-car">Range of Car</label>
+        <ul>
+            @foreach (var cat in ViewBag.RangeOfCars)
+            {
+                <li><a href="@Url.Action("Index", new { controller = "Products"})?rangeofcars=@cat">@cat</a></li>
+            }
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="desktop-link">Brands</a>
+        <input type="checkbox" id="Brands">
+        <label for="Brands">Brands</label>
+        <ul>
+            @foreach (var bn in ViewBag.BranchNames)
+            {
+                <li>
+
+                    <a href="#" class="desktop-link">@bn.Key</a>
+                    <input type="checkbox" id="@bn.Key">
+                    <label for="@bn.Key">@bn.Key</label>
+                    <ul>
+                        @foreach (var cn in bn.Value)
+                        {
+
+                            <li><a href="@Url.Action("Details", new { controller = "Products" })?details=@cn">@cn</a></li>
+                        }
+
+                    </ul>
+
+
+                </li>
+            }
+        </ul>
+    <li><a href="./htmls/PreOwned-car.html">PreOwned Car</a></li>
+    <li><a href="@Url.Action("Contact", new { controller = "Home" })">Contact</a></li>
+</ul>

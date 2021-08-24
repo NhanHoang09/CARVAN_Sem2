@@ -16,7 +16,7 @@ namespace CARVAN.Controllers
             IEnumerable<Product> products;
             products = db.Products;
         
-        ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
+        //ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
             return View(products);
         }
 
@@ -25,9 +25,9 @@ namespace CARVAN.Controllers
             IEnumerable<Product> products;
             products = db.Products;
 
-            ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
+            //ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
 
-            return View();
+            return View(products);
         }
 
         public ActionResult Contact()
@@ -35,7 +35,7 @@ namespace CARVAN.Controllers
             IEnumerable<Product> products;
             products = db.Products;
 
-            ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
+            //ViewBag.RangeOfCars = db.Products.Select(p => p.Range_Of_Car).Distinct();
 
             return View();
         }
