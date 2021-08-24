@@ -118,18 +118,18 @@ namespace CARVAN.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product product)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(product).State = EntityState.Modified;
-                SaveUploadedImage(product); // TODO: upload image, cần accept field ở phần Bind
+        //public ActionResult Edit(Product product)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(product).State = EntityState.Modified;
+        //        SaveUploadedImage(product); // TODO: upload image, cần accept field ở phần Bind
               
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(product);
-        }
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(product);
+        //}
 
         //private void SaveUploadedImage(Product product)
         //{
