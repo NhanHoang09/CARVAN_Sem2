@@ -131,29 +131,29 @@ namespace CARVAN.Controllers
             return View(product);
         }
 
-        private void SaveUploadedImage(Product product)
-        {
-            // Bỏ qua xử lí nếu không có file được upload
-            if (product.UpLoadFile == null) { return; }
+        //private void SaveUploadedImage(Product product)
+        //{
+        //    // Bỏ qua xử lí nếu không có file được upload
+        //    if (product.UpLoadFile == null) { return; }
 
-            // Lấy đường dẫn để lưu
-            string uploadDir = "/Uploads";
-            string relativePath = Common.Utils.PrependUniqueString(product.UpLoadFile.FileName);
-            string absolutePath = Server.MapPath(uploadDir + "/" + relativePath);
+        //    // Lấy đường dẫn để lưu
+        //    string uploadDir = "/Uploads";
+        //    string relativePath = Common.Utils.PrependUniqueString(product.UpLoadFile.FileName);
+        //    string absolutePath = Server.MapPath(uploadDir + "/" + relativePath);
 
-            //var featuredImage = new ProductImage
-            //{
-            //    ImageUrl = relativePath,
-            //    IsFeatured = true
-            //};
+        //    //var featuredImage = new ProductImage
+        //    //{
+        //    //    ImageUrl = relativePath,
+        //    //    IsFeatured = true
+        //    //};
 
-            // Cơ bản để lưu file về
-            product.UpLoadFile.SaveAs(absolutePath);
+        //    // Cơ bản để lưu file về
+        //    product.UpLoadFile.SaveAs(absolutePath);
 
-            // Gắn thông tin imgage vào sản phẩm (lưu dữ liệu vào bảng ProductImage)
-            //product.Product.Add(Image_2);
-            product.Image_1 = relativePath;
-        }
+        //    // Gắn thông tin imgage vào sản phẩm (lưu dữ liệu vào bảng ProductImage)
+        //    //product.Product.Add(Image_2);
+        //    product.Image_1 = relativePath;
+        //}
         // GET: Products/Delete/5
         public ActionResult Delete(string id)
         {
