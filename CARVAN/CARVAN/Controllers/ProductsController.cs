@@ -188,5 +188,21 @@ namespace CARVAN.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Search(string search)
+        {
+            IEnumerable<Product> products = null ;
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                products = db.Products
+                    .Where(p => p.Name_Car == search);
+            }
+            else
+            {
+                products = db.Products;
+            }
+            //search tu db theo tu khoa
+            return View(products);
+        }
     }
 }

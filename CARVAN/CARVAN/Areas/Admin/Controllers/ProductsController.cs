@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CARVAN.Models;
 
+
 namespace CARVAN.Areas.Admin.Controllers
 {
     public class ProductsController : Controller
@@ -71,7 +72,7 @@ namespace CARVAN.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_Car,Name_Car,Range_Of_Car,Brand_Car,Pricing,Seller,Status,Description,Image_1,Image_2,Image_3,Image_4,Image_5,Image_6")] Product product)
+        public ActionResult Create(Product product)
         {
             if (ModelState.IsValid)
             {
@@ -156,5 +157,7 @@ namespace CARVAN.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }

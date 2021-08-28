@@ -33,45 +33,7 @@
                 @{
                     Html.RenderAction("GetMenuView", new { controller = "Common" }); 
                     }
-                @*<ul class="links">
-                    <li><a href="./htmls/aboutus.html">About</a></li>
-                    <li>
-                        <a href="" class="desktop-link">Range of Car</a>
-                        <input type="checkbox" id="range-of-car">
-                        <label for="range-of-car">Range of Car</label>
-                        <ul>
-                            @foreach (var cat in ViewBag.RangeOfCars)
-                            {
-                                <li><a href="@Url.Action("Index", new { controller = "Products"})?rangeofcars=@cat">@cat</a></li>
-                            }
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="desktop-link">Brands</a>
-                        <input type="checkbox" id="Brands">
-                        <label for="Brands">Brands</label>
-                        <ul>
-                            <li>
-                                @foreach (var bn in ViewBag.BranchNames)
-                                {
-                                    <a href="#" class="desktop-link">@bn.Key</a>
-                                    <input type="checkbox" id="@bn.Key">
-                                    <label for="@bn.Key">@bn.Key</label>
-                                    <ul class="sub-menu">
-                                        @foreach (var cn in bn.Value)
-                                        {
-
-                                            <li><a href="@Url.Action("Details", new { controller = "Products"})?details=@cn">@cn</a></li>
-                                        }
-
-                                    </ul>
-
-                                }
-                            </li>
-                        </ul>
-                        <li><a href="./htmls/PreOwned-car.html">PreOwned Car</a></li>
-                        <li><a href="./htmls/contactsus.html">Contact</a></li>
-                    </ul*@>
+               
                 </div>
                 <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
                 <form action="#" class="search-box">
@@ -144,11 +106,10 @@
                 <div class="footer_width link col-md-4">
                     <h2>Quick Link</h2>
                     <ul>
-                        <li><a href="./htmls/aboutus.html">About Us</a></li>
-                        <li><a href="./htmls/PreOwned-car.html">PreOwned</a></li>
-                        <li><a href="./htmls/Range-of-cars.html">Range of cars</a></li>
-                        <li><a href="./htmls/contactsus.html">Contact Us</a></li>
-                        <li><a href="./htmls/sitemap.html">Site map</a></li>
+                        <li><a href="@Url.Action("About", new { controller = "Home" })">About Us</a></li>
+                        <li><a href="@Url.Action("Index", new { controller = "Products"})">Range of cars</a></li>
+                        <li><a href="@Url.Action("Contact", new { controller = "Home" })">Contact Us</a></li>
+                        <li><a href="@Url.Action("Sitemap", new { controller = "Home" })">Site map</a></li>
                     </ul>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.0855121590807!2d-98.76110613447415!3d33.027877528458326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8653c3f02119d0d7%3A0x1ececcdfb63b8142!2sYoung%20County!5e0!3m2!1sen!2s!4v1625683921772!5m2!1sen!2s" width="350" style="border:0; margin-left: 18px;" allowfullscreen="" loading="lazy"></iframe>

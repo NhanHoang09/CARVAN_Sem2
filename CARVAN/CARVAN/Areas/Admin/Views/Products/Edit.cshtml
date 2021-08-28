@@ -8,7 +8,7 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -91,13 +91,13 @@
             <div class="col-md-10">
                 @*@if (string.IsNullOrWhiteSpace(Model.Image_2))*@
                 {
-                    @Html.TextBoxFor(model => model.UpLoadFile, new { @type = "file" })
+                @Html.TextBoxFor(model => model.UpLoadFile, new { @type = "file" })
                 }
                 @*else
-                {
-                    <a href="@Url.Action("RemoveImage", "Products", new { id = 1})?RedirectUrl=/Admin/Products/Edit/@Model.Id_Car">Remove</a>
+                    {
+                        <a href="@Url.Action("RemoveImage", "Products", new { id = 1})?RedirectUrl=/Admin/Products/Edit/@Model.Id_Car">Remove</a>
 
-                }*@
+                    }*@
             </div>
             <div class="col-md-4">
                 <img class="thumbnail img-thumbnail" src="@Utils.GetImageUrl(Model.Image_2)" />

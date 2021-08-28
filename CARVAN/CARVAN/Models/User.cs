@@ -20,5 +20,9 @@ namespace CARVAN.Models
 
         [StringLength(20)]
         public string Email_User { get; set; }
+
+        [StringLength(20)]
+        public string Role { get; set; }
+        public object LoginName { get; internal set; }
     }
 }
